@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Power Consumption Analysis</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #ffc800;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 40px;
+      }
+
+      .form-box {
+        flex: 1;
+        max-width: 400px;
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      input[type="submit"] {
+        background-color: maroon;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .image-box {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image-box img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h1>Power Consumption Analysis</h1>
+        <form action="/predict" method="post">
+          <input
+            type="text"
+            name="reactive_power"
+            placeholder="Enter the Global reactive power value(0-1)"
+            required
+          />
+          <input
+            type="text"
+            name="intensity"
+            placeholder="Enter the Global intensity value"
+            required
+          />
+          <input
+            type="text"
+            name="sub1"
+            placeholder="Enter the Submeter Reading 1"
+            required
+          />
+          <input
+            type="text"
+            name="sub2"
+            placeholder="Enter the Submeter Reading 2"
+            required
+          />
+          <input
+            type="text"
+            name="sub3"
+            placeholder="Enter the Submeter Reading 3"
+            required
+          />
+          <input type="submit" value="Predict" />
+        </form>
+      </div>
+      <div class="image-box">
+        <img
+          src="{{ url_for('static', filename='meter.png') }}"
+          alt="Meter Image"
+        />
+      </div>
+    </div>
+  </body>
+</html>

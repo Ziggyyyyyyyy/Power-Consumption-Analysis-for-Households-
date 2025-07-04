@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Power Consumption Analysis Result</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #ffc800;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 40px;
+      }
+
+      .text-box {
+        flex: 1;
+        max-width: 600px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+
+      .image-box {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image-box img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-box">
+        <h1>Power Consumption Analysis</h1>
+        <p>Global active power is {{ prediction_text }}</p>
+      </div>
+      <div class="image-box">
+        <img
+          src="{{ url_for('static', filename='meter.png') }}"
+          alt="Meter Image"
+        />
+      </div>
+    </div>
+  </body>
+</html>
