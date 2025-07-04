@@ -19,8 +19,7 @@ The project utilizes a household electric power consumption dataset that contain
 - Global active/reactive power
 - Voltage
 - Global intensity
-- Sub-metering (kitchen, laundry, etc.)
-  
+-   
 Acknowledgments
 - Data: Home electrical power consumption data set
 - Libraries: pandas, numpy, scikit-learn, Flask, seaborn, matplotlib
